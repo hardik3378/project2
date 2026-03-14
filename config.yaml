@@ -1,0 +1,12 @@
+system:
+  alert_check_interval: 5
+  threshold_time_seconds: 300
+
+models:
+  detection_weights: "yolo12n.pt" 
+
+cameras:
+  cam_1: "0" # Use "0" for webcam, or your IP camera link
+  
+database:
+  db_path: "database/visitors.db"
