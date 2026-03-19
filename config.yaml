@@ -3,10 +3,49 @@ system:
   threshold_time_seconds: 300
 
 models:
-  detection_weights: "yolo12n.pt" 
+  detection_weights: "yolo12n.pt"
+
+detector:
+  confidence: 0.35
+  iou: 0.45
+  imgsz: 640
+  max_det: 32
+
+reid:
+  similarity_threshold: 0.75
+  recovery_similarity_threshold: 0.82
+  merge_similarity_threshold: 0.88
+  learning_similarity_ceiling: 0.92
+  shortlist_size: 5
+  max_signatures_per_id: 20
+  min_crop_size: 32
+  max_wait_time: 3.0
+
+processing:
+  ai_frame_width: 640
+  ai_frame_height: 480
+  detect_every_n_frames: 1
+  reid_interval_frames: 10
+  tracker_max_age: 30
+  camera_buffer_width: 1280
+  camera_buffer_height: 720
+  display: true
 
 cameras:
-  cam_1: "0" # Use "0" for webcam, or your IP camera link
-  
+  cam_1:
+    source: "0"
+    processing:
+      detect_every_n_frames: 1
+      reid_interval_frames: 8
+  cam_2:
+    source: "rtsp://username:password@camera-2/stream"
+    processing:
+      display: false
+      detect_every_n_frames: 2
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+
 database:
   db_path: "database/visitors.db"
