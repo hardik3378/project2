@@ -1,10 +1,12 @@
 # AI and Vision Libraries
-ultralytics       # For YOLO object detection and tracking
-opencv-python     # For handling camera feeds and image manipulation
-torch             # PyTorch (Backend for AI models)
-torchvision       # Image processing for PyTorch
-scikit-learn      # For the Cosine Similarity math in Re-ID matching
+ultralytics
+opencv-python
+torch
+torchvision
+scipy
+deep-sort-realtime
 
-# Utility Libraries
-pyyaml            # To read the config.yaml file
-numpy             # For fast math operations on images
+# API / Utility Libraries
+flask
+pyyaml
+numpy
